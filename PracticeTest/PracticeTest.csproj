@@ -1,0 +1,2139 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\UmbracoCms.7.7.3\build\UmbracoCms.props" Condition="Exists('..\packages\UmbracoCms.7.7.3\build\UmbracoCms.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{34DBDBB7-F5BC-4953-BB0C-F0377BBBF1E0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PracticeTest</RootNamespace>
+    <AssemblyName>PracticeTest</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="businesslogic, Version=1.0.6499.16606, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.3\lib\net45\businesslogic.dll</HintPath>
+    </Reference>
+    <Reference Include="ClientDependency.Core, Version=1.9.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClientDependency.1.9.2\lib\net45\ClientDependency.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ClientDependency.Core.Mvc, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClientDependency-Mvc5.1.8.0.0\lib\net45\ClientDependency.Core.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="cms, Version=1.0.6499.16607, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.3\lib\net45\cms.dll</HintPath>
+    </Reference>
+    <Reference Include="controls, Version=1.0.6499.16608, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.3\lib\net45\controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Esent.Interop, Version=1.9.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\ManagedEsent.1.9.4\lib\net40\Esent.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Examine, Version=0.1.85.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Examine.0.1.85\lib\net45\Examine.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageProcessor, Version=2.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.2.5.3\lib\net45\ImageProcessor.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageProcessor.Web, Version=4.8.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.Web.4.8.3\lib\net45\ImageProcessor.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="interfaces, Version=1.0.6499.16597, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.3\lib\net45\interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.3\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Log4Net.Async, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Log4Net.Async.2.0.4\lib\net40\Log4Net.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net, Version=2.9.4.1, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lucene.Net.2.9.4.1\lib\net40\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="MarkdownSharp, Version=1.14.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Markdown.1.14.7\lib\net45\MarkdownSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=1.0.1559.20655, Culture=neutral">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.3\lib\net45\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Common.2.3.1\lib\netstandard1.3\Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.2.3.1\lib\netstandard1.3\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.Workspaces.2.3.1\lib\netstandard1.3\Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.VisualBasic, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.VisualBasic.2.3.1\lib\netstandard1.3\Microsoft.CodeAnalysis.VisualBasic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.VisualBasic.Workspaces, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.VisualBasic.Workspaces.2.3.1\lib\netstandard1.3\Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Workspaces.Common.2.3.1\lib\net46\Microsoft.CodeAnalysis.Workspaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.Workspaces.Desktop, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeAnalysis.Workspaces.Common.2.3.1\lib\net46\Microsoft.CodeAnalysis.Workspaces.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.2.1\lib\net45\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MiniProfiler, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.2.1.0\lib\net40\MiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.10.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.10\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLAppConfig, Version=0.2.0.0, Culture=neutral, PublicKeyToken=7dc9bc9afb3fa588, processorArchitecture=MSIL">
+      <HintPath>..\packages\PCLAppConfig.0.3.2\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLAppConfig.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLAppConfig.FileSystemStream, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PCLAppConfig.0.3.2\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLAppConfig.FileSystemStream.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLAppConfig.FileSystemStream.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PCLAppConfig.0.3.2\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLAppConfig.FileSystemStream.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage, Version=1.0.2.0, Culture=neutral, PublicKeyToken=286fe515a2c35b64, processorArchitecture=MSIL">
+      <HintPath>..\packages\PCLStorage.1.0.2\lib\net45\PCLStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage.Abstractions, Version=1.0.2.0, Culture=neutral, PublicKeyToken=286fe515a2c35b64, processorArchitecture=MSIL">
+      <HintPath>..\packages\PCLStorage.1.0.2\lib\net45\PCLStorage.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Semver, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\semver.1.1.2\lib\net451\Semver.dll</HintPath>
+    </Reference>
+    <Reference Include="Spxus.Calture, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\spxus.service.calture.0.1.0\lib\net45\Spxus.Calture.dll</HintPath>
+    </Reference>
+    <Reference Include="Spxus.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\spxus.core.0.1.0\lib\portable-net45+sl4+wp7+win8\Spxus.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spxus.Email, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\spxus.service.spxemail.0.1.0\lib\net45\Spxus.Email.dll</HintPath>
+    </Reference>
+    <Reference Include="Spxus.Umbraco.Extend, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Spxus.Umbraco.Extend.0.1.2\lib\net45\Spxus.Umbraco.Extend.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLCE4Umbraco, Version=1.0.6499.16608, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.3\lib\net45\SQLCE4Umbraco.dll</HintPath>
+    </Reference>
+    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.3.1\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Composition.AttributedModel, Version=1.0.31.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Composition.AttributedModel.1.0.31\lib\portable-net45+win8+wp8+wpa81\System.Composition.AttributedModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Convention, Version=1.0.31.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Composition.Convention.1.0.31\lib\portable-net45+win8+wp8+wpa81\System.Composition.Convention.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Hosting, Version=1.0.31.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Composition.Hosting.1.0.31\lib\portable-net45+win8+wp8+wpa81\System.Composition.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.Runtime, Version=1.0.31.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Composition.Runtime.1.0.31\lib\portable-net45+win8+wp8+wpa81\System.Composition.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Composition.TypedParts, Version=1.0.31.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Composition.TypedParts.1.0.31\lib\portable-net45+win8+wp8+wpa81\System.Composition.TypedParts.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.3\lib\net45\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe.Entity, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.3\lib\net45\System.Data.SqlServerCe.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.FileVersionInfo, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.FileVersionInfo.4.3.0\lib\net46\System.Diagnostics.FileVersionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.StackTrace, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.StackTrace.4.3.0\lib\net46\System.Diagnostics.StackTrace.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Reflection.Metadata, Version=1.4.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.1.4.2\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.4.3.0\lib\net46\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.6.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Dataflow.4.7.0\lib\portable-net45+win8+wpa81\System.Threading.Tasks.Dataflow.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Thread, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Thread.4.3.0\lib\net46\System.Threading.Thread.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XmlDocument.4.3.0\lib\net46\System.Xml.XmlDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XPath, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.4.3.0\lib\net46\System.Xml.XPath.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.XPath.XDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XPath.XDocument.4.3.0\lib\net46\System.Xml.XPath.XDocument.dll</HintPath>
+    </Reference>
+    <Reference Include="TidyNet, Version=1.0.0.0, Culture=neutral">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.3\lib\net45\TidyNet.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco, Version=1.0.6499.16609, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.3\lib\net45\umbraco.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Core, Version=1.0.6499.16599, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.3\lib\net45\Umbraco.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.DataLayer, Version=1.0.6499.16606, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.3\lib\net45\umbraco.DataLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.editorControls, Version=1.0.6499.16613, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.3\lib\net45\umbraco.editorControls.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.MacroEngines, Version=1.0.6499.16614, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.3\lib\net45\umbraco.MacroEngines.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.ModelsBuilder, Version=3.0.7.99, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Umbraco.ModelsBuilder.3.0.7\lib\Umbraco.ModelsBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.providers, Version=1.0.6499.16608, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.3\lib\net45\umbraco.providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Web.UI, Version=1.0.6499.16615, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.3\lib\net45\Umbraco.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UmbracoExamine, Version=0.7.0.16608, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UmbracoCms.Core.7.7.3\lib\net45\UmbracoExamine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin\Actions\delete.aspx" />
+    <Content Include="admin\Actions\editContent.aspx" />
+    <Content Include="admin\Actions\preview.aspx" />
+    <Content Include="admin\Actions\publish.aspx" />
+    <Content Include="admin\assets\css\canvasdesigner.css" />
+    <Content Include="admin\assets\css\installer.css" />
+    <Content Include="admin\assets\css\nonodes.style.min.css" />
+    <Content Include="admin\assets\css\umbraco.css" />
+    <Content Include="admin\assets\fonts\helveticons\helveticons.svg" />
+    <Content Include="admin\assets\fonts\opensans\OpenSans-Regular-webfont.svg" />
+    <Content Include="admin\assets\fonts\opensans\OpenSans-Semibold-webfont.svg" />
+    <Content Include="admin\assets\img\applicationIcons\content.png" />
+    <Content Include="admin\assets\img\applicationIcons\default.png" />
+    <Content Include="admin\assets\img\applicationIcons\developer.png" />
+    <Content Include="admin\assets\img\applicationIcons\help.svg" />
+    <Content Include="admin\assets\img\applicationIcons\hlvticons-umbraco.svg" />
+    <Content Include="admin\assets\img\applicationIcons\media.png" />
+    <Content Include="admin\assets\img\applicationIcons\members.png" />
+    <Content Include="admin\assets\img\applicationIcons\search.png" />
+    <Content Include="admin\assets\img\applicationIcons\settings.png" />
+    <Content Include="admin\assets\img\applicationIcons\tree-arrow.png" />
+    <Content Include="admin\assets\img\applicationIcons\users.png" />
+    <Content Include="admin\assets\img\application\logo%402x.png" />
+    <Content Include="admin\assets\img\application\logo%403x.png" />
+    <Content Include="admin\assets\img\application\logo.png" />
+    <Content Include="admin\assets\img\application\logo_black.png" />
+    <Content Include="admin\assets\img\application\logo_white.png" />
+    <Content Include="admin\assets\img\checkered-background-20.png" />
+    <Content Include="admin\assets\img\checkered-background.png" />
+    <Content Include="admin\assets\img\forms\installer-background.png" />
+    <Content Include="admin\assets\img\installer.jpg" />
+    <Content Include="admin\assets\img\loader.gif" />
+    <Content Include="admin\assets\img\logo.png" />
+    <Content Include="admin\assets\img\nonodesbg.jpg" />
+    <Content Include="admin\assets\img\transparent.png" />
+    <Content Include="admin\assets\img\uploader\upload-illustration.png" />
+    <Content Include="admin\assets\img\uploader\upload-illustration.svg" />
+    <Content Include="admin\ClientRedirect.aspx" />
+    <Content Include="admin\Config\Create\UI.xml" />
+    <Content Include="admin\Config\Lang\cs.xml" />
+    <Content Include="admin\Config\Lang\da.xml" />
+    <Content Include="admin\Config\Lang\de.xml" />
+    <Content Include="admin\Config\Lang\en.xml" />
+    <Content Include="admin\Config\Lang\en_us.xml" />
+    <Content Include="admin\Config\Lang\es.xml" />
+    <Content Include="admin\Config\Lang\fr.xml" />
+    <Content Include="admin\Config\Lang\he.xml" />
+    <Content Include="admin\Config\Lang\it.xml" />
+    <Content Include="admin\Config\Lang\ja.xml" />
+    <Content Include="admin\Config\Lang\ko.xml" />
+    <Content Include="admin\Config\Lang\nb.xml" />
+    <Content Include="admin\Config\Lang\nl.xml" />
+    <Content Include="admin\Config\Lang\pl.xml" />
+    <Content Include="admin\Config\Lang\pt.xml" />
+    <Content Include="admin\Config\Lang\ru.xml" />
+    <Content Include="admin\Config\Lang\sv.xml" />
+    <Content Include="admin\Config\Lang\tr.xml" />
+    <Content Include="admin\Config\Lang\zh.xml" />
+    <Content Include="admin\Config\Lang\zh_tw.xml" />
+    <Content Include="admin\Controls\ProgressBar.ascx" />
+    <Content Include="admin\Controls\Tree\CustomTreeService.asmx" />
+    <Content Include="admin\Controls\Tree\TreeControl.ascx" />
+    <Content Include="admin\create.aspx" />
+    <Content Include="admin\Create\language.ascx" />
+    <Content Include="admin\Create\simple.ascx" />
+    <Content Include="admin\Create\xslt.ascx" />
+    <Content Include="admin\Dashboard\FeedProxy.aspx" />
+    <Content Include="admin\Dashboard\UserControlProxy.aspx" />
+    <Content Include="admin\Developer\Macros\assemblyBrowser.aspx" />
+    <Content Include="admin\Developer\Macros\editMacro.aspx" />
+    <Content Include="admin\Developer\Packages\directoryBrowser.aspx" />
+    <Content Include="admin\Developer\Packages\editPackage.aspx" />
+    <Content Include="admin\Developer\Packages\installer.aspx" />
+    <Content Include="admin\Developer\RelationTypes\EditRelationType.aspx" />
+    <Content Include="admin\Developer\RelationTypes\Images\Bidirectional.png" />
+    <Content Include="admin\Developer\RelationTypes\Images\ParentToChild.png" />
+    <Content Include="admin\Developer\RelationTypes\Images\Refresh.gif" />
+    <Content Include="admin\Developer\RelationTypes\NewRelationType.aspx" />
+    <Content Include="admin\Developer\RelationTypes\RelationTypesWebService.asmx" />
+    <Content Include="admin\Developer\RelationTypes\TreeMenu\ActionDeleteRelationType.js" />
+    <Content Include="admin\Developer\RelationTypes\TreeMenu\ActionNewRelationType.js" />
+    <Content Include="admin\Developer\Xslt\editXslt.aspx" />
+    <Content Include="admin\Developer\Xslt\getXsltStatus.asmx" />
+    <Content Include="admin\Developer\Xslt\xsltChooseExtension.aspx" />
+    <Content Include="admin\Developer\Xslt\xsltInsertValueOf.aspx" />
+    <Content Include="admin\Developer\Xslt\xsltVisualize.aspx" />
+    <Content Include="admin\Dialogs\AssignDomain2.aspx" />
+    <Content Include="admin\Dialogs\ChangeDocType.aspx" />
+    <Content Include="admin\Dialogs\create.aspx" />
+    <Content Include="admin\Dialogs\EditMacro.aspx" />
+    <Content Include="admin\Dialogs\empty.htm" />
+    <Content Include="admin\Dialogs\exportDocumenttype.aspx" />
+    <Content Include="admin\Dialogs\importDocumenttype.aspx" />
+    <Content Include="admin\Dialogs\notifications.aspx" />
+    <Content Include="admin\Dialogs\Preview.aspx" />
+    <Content Include="admin\Dialogs\protectPage.aspx" />
+    <Content Include="admin\Dialogs\publish.aspx" />
+    <Content Include="admin\Dialogs\republish.aspx" />
+    <Content Include="admin\Dialogs\rollBack.aspx" />
+    <Content Include="admin\Dialogs\search.aspx" />
+    <Content Include="admin\Dialogs\SendPublish.aspx" />
+    <Content Include="admin\Dialogs\sendToTranslation.aspx" />
+    <Content Include="admin\Dialogs\sort.aspx" />
+    <Content Include="admin\Dialogs\treePicker.aspx" />
+    <Content Include="admin\Dialogs\umbracoField.aspx" />
+    <Content Include="admin\Dialogs\viewAuditTrail.aspx" />
+    <Content Include="admin\endPreview.aspx" />
+    <Content Include="admin\Js\app.dev.js" />
+    <Content Include="admin\Js\app.js" />
+    <Content Include="admin\Js\canvasdesigner.loader.js" />
+    <Content Include="admin\Js\dualSelectBox.js" />
+    <Content Include="admin\Js\guiFunctions.js" />
+    <Content Include="admin\Js\init.js" />
+    <Content Include="admin\Js\install.loader.js" />
+    <Content Include="admin\Js\installer.app.js" />
+    <Content Include="admin\Js\loader.dev.js" />
+    <Content Include="admin\Js\routes.js" />
+    <Content Include="admin\Js\umbraco.canvasdesigner.js" />
+    <Content Include="admin\Js\umbraco.controllers.js" />
+    <Content Include="admin\Js\umbraco.directives.js" />
+    <Content Include="admin\Js\umbraco.filters.js" />
+    <Content Include="admin\Js\umbraco.installer.js" />
+    <Content Include="admin\Js\umbraco.resources.js" />
+    <Content Include="admin\Js\umbraco.security.js" />
+    <Content Include="admin\Js\umbraco.services.js" />
+    <Content Include="admin\Js\umbracoCheckKeys.js" />
+    <Content Include="admin\Js\UmbracoSpeechBubble.js" />
+    <Content Include="admin\Js\UmbracoSpeechBubbleBackEnd.js" />
+    <Content Include="admin\Js\UmbracoSpeechBubbleInit.js" />
+    <Content Include="admin\Js\umbracoUpgradeChecker.js" />
+    <Content Include="admin\Js\xmlextras.js" />
+    <Content Include="admin\Js\xmlRequest.js" />
+    <Content Include="admin\lib\ace-builds\src-min-noconflict\ace.js" />
+    <Content Include="admin\lib\ace-builds\src-min-noconflict\ext-language_tools.js" />
+    <Content Include="admin\lib\ace-builds\src-min-noconflict\ext-searchbox.js" />
+    <Content Include="admin\lib\ace-builds\src-min-noconflict\ext-settings_menu.js" />
+    <Content Include="admin\lib\ace-builds\src-min-noconflict\mode-javascript.js" />
+    <Content Include="admin\lib\ace-builds\src-min-noconflict\mode-razor.js" />
+    <Content Include="admin\lib\ace-builds\src-min-noconflict\snippets\javascript.js" />
+    <Content Include="admin\lib\ace-builds\src-min-noconflict\snippets\text.js" />
+    <Content Include="admin\lib\ace-builds\src-min-noconflict\theme-chrome.js" />
+    <Content Include="admin\lib\ace-builds\src-min-noconflict\worker-javascript.js" />
+    <Content Include="admin\lib\ace-razor-mode\theme\razor_chrome.css" />
+    <Content Include="admin\lib\angular-bootstrap\ui-bootstrap-tpls-0.10.0.min.js" />
+    <Content Include="admin\lib\angular-dynamic-locale\tmhDynamicLocale.min.js" />
+    <Content Include="admin\lib\angular-local-storage\angular-local-storage.min.js" />
+    <Content Include="admin\lib\angular\1.1.5\angular-cookies.js" />
+    <Content Include="admin\lib\angular\1.1.5\angular-cookies.min.js" />
+    <Content Include="admin\lib\angular\1.1.5\angular-loader.js" />
+    <Content Include="admin\lib\angular\1.1.5\angular-loader.min.js" />
+    <Content Include="admin\lib\angular\1.1.5\angular-mobile.js" />
+    <Content Include="admin\lib\angular\1.1.5\angular-mobile.min.js" />
+    <Content Include="admin\lib\angular\1.1.5\angular-mocks.js" />
+    <Content Include="admin\lib\angular\1.1.5\angular-resource.js" />
+    <Content Include="admin\lib\angular\1.1.5\angular-resource.min.js" />
+    <Content Include="admin\lib\angular\1.1.5\angular-sanitize.js" />
+    <Content Include="admin\lib\angular\1.1.5\angular-sanitize.min.js" />
+    <Content Include="admin\lib\angular\1.1.5\angular-scenario.js" />
+    <Content Include="admin\lib\angular\1.1.5\angular.js" />
+    <Content Include="admin\lib\angular\1.1.5\angular.min.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_af-na.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_af-za.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_af.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_am-et.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_am.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ar-001.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ar-ae.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ar-bh.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ar-dz.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ar-eg.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ar-iq.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ar-jo.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ar-kw.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ar-lb.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ar-ly.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ar-ma.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ar-om.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ar-qa.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ar-sa.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ar-sd.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ar-sy.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ar-tn.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ar-ye.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ar.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_bg-bg.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_bg.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_bn-bd.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_bn-in.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_bn.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ca-ad.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ca-es.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ca.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_chr.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_cs-cz.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_cs.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_cy.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_da-dk.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_da.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_de-at.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_de-be.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_de-ch.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_de-de.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_de-li.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_de-lu.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_de.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_el-cy.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_el-gr.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_el-polyton.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_el.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-as.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-au.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-bb.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-be.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-bm.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-bw.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-bz.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-ca.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-dsrt-us.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-dsrt.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-fm.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-gb.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-gu.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-gy.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-hk.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-ie.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-in.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-iso.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-jm.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-mh.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-mp.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-mt.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-mu.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-na.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-nz.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-ph.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-pk.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-pr.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-pw.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-sg.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-tc.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-tt.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-um.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-us.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-vg.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-vi.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-za.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-zw.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en-zz.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_en.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-419.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-ar.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-bo.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-cl.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-co.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-cr.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-do.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-ea.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-ec.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-es.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-gq.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-gt.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-hn.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-ic.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-mx.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-ni.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-pa.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-pe.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-pr.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-py.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-sv.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-us.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-uy.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es-ve.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_es.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_et-ee.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_et.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_eu-es.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_eu.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fa-af.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fa-ir.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fa.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fi-fi.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fi.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fil-ph.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fil.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-be.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-bf.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-bi.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-bj.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-bl.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-ca.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-cd.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-cf.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-cg.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-ch.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-ci.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-cm.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-dj.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-fr.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-ga.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-gf.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-gn.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-gp.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-gq.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-km.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-lu.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-mc.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-mf.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-mg.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-ml.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-mq.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-ne.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-re.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-rw.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-sn.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-td.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-tg.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr-yt.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_fr.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_gl-es.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_gl.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_gsw-ch.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_gsw.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_gu-in.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_gu.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_haw.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_he-il.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_he.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_hi-in.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_hi.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_hr-hr.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_hr.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_hu-hu.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_hu.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_id-id.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_id.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_in.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_is-is.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_is.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_it-ch.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_it-it.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_it-sm.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_it.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_iw.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ja-jp.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ja.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_kn-in.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_kn.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ko-kr.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ko.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ln-cd.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ln-cg.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ln.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_lt-lt.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_lt.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_lv-lv.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_lv.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ml-in.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ml.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_mo.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_mr-in.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_mr.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ms-bn.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ms-my.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ms.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_mt-mt.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_mt.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_nl-aw.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_nl-be.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_nl-cw.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_nl-nl.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_nl-sx.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_nl.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_no.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_or-in.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_or.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_pl-pl.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_pl.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_pt-ao.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_pt-br.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_pt-gw.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_pt-mz.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_pt-pt.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_pt-st.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_pt.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ro-md.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ro-ro.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ro.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ru-md.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ru-ru.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ru-ua.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ru.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_sk-sk.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_sk.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_sl-si.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_sl.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_sq-al.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_sq.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_sr-cyrl-ba.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_sr-cyrl-me.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_sr-cyrl-rs.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_sr-cyrl.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_sr-latn-ba.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_sr-latn-me.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_sr-latn-rs.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_sr-latn.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_sr-rs.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_sr.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_sv-fi.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_sv-se.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_sv.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_sw-ke.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_sw-tz.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_sw.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ta-in.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ta-lk.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ta.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_te-in.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_te.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_th-th.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_th.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_tl-ph.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_tl.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_tr-tr.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_tr.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_uk-ua.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_uk.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ur-in.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ur-pk.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_ur.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_vi-vn.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_vi.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_zh-cn.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_zh-hans-cn.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_zh-hans-hk.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_zh-hans-mo.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_zh-hans-sg.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_zh-hans.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_zh-hant-hk.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_zh-hant-mo.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_zh-hant-tw.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_zh-hant.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_zh-hk.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_zh-tw.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_zh.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_zu-za.js" />
+    <Content Include="admin\lib\angular\1.1.5\i18n\angular-locale_zu.js" />
+    <Content Include="admin\lib\angular\angular-ui-sortable.js" />
+    <Content Include="admin\lib\bootstrap-social\bootstrap-social.css" />
+    <Content Include="admin\lib\bootstrap-tabdrop\bootstrap-tabdrop.js" />
+    <Content Include="admin\lib\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="admin\lib\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="admin\lib\bootstrap\css\bootstrap.cosmo.min.css" />
+    <Content Include="admin\lib\bootstrap\css\bootstrap.css" />
+    <Content Include="admin\lib\bootstrap\css\bootstrap.min.3.0.1.css" />
+    <Content Include="admin\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="admin\lib\bootstrap\css\responsive.css" />
+    <Content Include="admin\lib\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="admin\lib\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="admin\lib\bootstrap\js\bootstrap.2.3.2.js" />
+    <Content Include="admin\lib\bootstrap\js\bootstrap.2.3.2.min.js" />
+    <Content Include="admin\lib\bootstrap\less\tests\buttons.html" />
+    <Content Include="admin\lib\bootstrap\less\tests\css-tests.css" />
+    <Content Include="admin\lib\bootstrap\less\tests\css-tests.html" />
+    <Content Include="admin\lib\bootstrap\less\tests\forms-responsive.html" />
+    <Content Include="admin\lib\bootstrap\less\tests\forms.html" />
+    <Content Include="admin\lib\bootstrap\less\tests\navbar-fixed-top.html" />
+    <Content Include="admin\lib\bootstrap\less\tests\navbar-static-top.html" />
+    <Content Include="admin\lib\bootstrap\less\tests\navbar.html" />
+    <Content Include="admin\lib\clipboard\clipboard.min.js" />
+    <Content Include="admin\lib\codemirror\addon\dialog\dialog.css" />
+    <Content Include="admin\lib\codemirror\addon\dialog\dialog.js" />
+    <Content Include="admin\lib\codemirror\addon\edit\closebrackets.js" />
+    <Content Include="admin\lib\codemirror\addon\edit\closetag.js" />
+    <Content Include="admin\lib\codemirror\addon\edit\continuelist.js" />
+    <Content Include="admin\lib\codemirror\addon\edit\matchbrackets.js" />
+    <Content Include="admin\lib\codemirror\addon\edit\matchtags.js" />
+    <Content Include="admin\lib\codemirror\addon\edit\trailingspace.js" />
+    <Content Include="admin\lib\codemirror\addon\search\match-highlighter.js" />
+    <Content Include="admin\lib\codemirror\addon\search\matchesonscrollbar.css" />
+    <Content Include="admin\lib\codemirror\addon\search\matchesonscrollbar.js" />
+    <Content Include="admin\lib\codemirror\addon\search\search.js" />
+    <Content Include="admin\lib\codemirror\addon\search\searchcursor.js" />
+    <Content Include="admin\lib\codemirror\addon\selection\active-line.js" />
+    <Content Include="admin\lib\codemirror\addon\selection\mark-selection.js" />
+    <Content Include="admin\lib\codemirror\addon\selection\selection-pointer.js" />
+    <Content Include="admin\lib\codemirror\lib\codemirror.css" />
+    <Content Include="admin\lib\codemirror\lib\codemirror.js" />
+    <Content Include="admin\lib\codemirror\mode\css\css.js" />
+    <Content Include="admin\lib\codemirror\mode\htmlmixed\htmlmixed.js" />
+    <Content Include="admin\lib\codemirror\mode\javascript\javascript.js" />
+    <Content Include="admin\lib\codemirror\mode\razor\index.html" />
+    <Content Include="admin\lib\codemirror\mode\razor\razor.js" />
+    <Content Include="admin\lib\codemirror\mode\xml\xml.js" />
+    <Content Include="admin\lib\cssparser\cssparser.js" />
+    <Content Include="admin\lib\datetimepicker\bootstrap-datetimepicker.js" />
+    <Content Include="admin\lib\datetimepicker\bootstrap-datetimepicker.min.css" />
+    <Content Include="admin\lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="admin\lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="admin\lib\jquery-migrate\jquery-migrate.min.js" />
+    <Content Include="admin\lib\jquery-ui-touch-punch\jquery.ui.touch-punch.js" />
+    <Content Include="admin\lib\jquery-ui\jquery-ui-1.10.4.custom.min.css" />
+    <Content Include="admin\lib\jquery-ui\jquery-ui.min.js" />
+    <Content Include="admin\lib\jquery\jquery.min.js" />
+    <Content Include="admin\lib\less\less-1.7.0.min.js" />
+    <Content Include="admin\lib\markdown\markdown.converter.js" />
+    <Content Include="admin\lib\markdown\markdown.css" />
+    <Content Include="admin\lib\markdown\markdown.editor.js" />
+    <Content Include="admin\lib\markdown\markdown.sanitizer.js" />
+    <Content Include="admin\lib\markdown\red.css" />
+    <Content Include="admin\lib\moment\moment-with-locales.js" />
+    <Content Include="admin\lib\ng-file-upload\ng-file-upload.min.js" />
+    <Content Include="admin\lib\rgrove-lazyload\lazyload.js" />
+    <Content Include="admin\lib\slider\bootstrap-slider-custom.css" />
+    <Content Include="admin\lib\slider\bootstrap-slider.css" />
+    <Content Include="admin\lib\slider\js\bootstrap-slider.js" />
+    <Content Include="admin\lib\spectrum\spectrum.css" />
+    <Content Include="admin\lib\spectrum\spectrum.js" />
+    <Content Include="admin\lib\tinymce\langs\da.js" />
+    <Content Include="admin\lib\tinymce\langs\de.js" />
+    <Content Include="admin\lib\tinymce\langs\en.js" />
+    <Content Include="admin\lib\tinymce\langs\en_us.js" />
+    <Content Include="admin\lib\tinymce\langs\fi.js" />
+    <Content Include="admin\lib\tinymce\langs\fr.js" />
+    <Content Include="admin\lib\tinymce\langs\he.js" />
+    <Content Include="admin\lib\tinymce\langs\it.js" />
+    <Content Include="admin\lib\tinymce\langs\ja.js" />
+    <Content Include="admin\lib\tinymce\langs\nl.js" />
+    <Content Include="admin\lib\tinymce\langs\no.js" />
+    <Content Include="admin\lib\tinymce\langs\pl.js" />
+    <Content Include="admin\lib\tinymce\langs\pt.js" />
+    <Content Include="admin\lib\tinymce\langs\ru.js" />
+    <Content Include="admin\lib\tinymce\langs\sv.js" />
+    <Content Include="admin\lib\tinymce\langs\zh.js" />
+    <Content Include="admin\lib\tinymce\plugins\advlist\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\advlist\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\anchor\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\anchor\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\autolink\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\autolink\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\autoresize\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\autoresize\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\autosave\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\autosave\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\bbcode\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\bbcode\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\charmap\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\charmap\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\codemirror\langs\da.js" />
+    <Content Include="admin\lib\tinymce\plugins\codemirror\langs\de.js" />
+    <Content Include="admin\lib\tinymce\plugins\codemirror\langs\en.js" />
+    <Content Include="admin\lib\tinymce\plugins\codemirror\langs\en_us.js" />
+    <Content Include="admin\lib\tinymce\plugins\codemirror\langs\fi.js" />
+    <Content Include="admin\lib\tinymce\plugins\codemirror\langs\fr.js" />
+    <Content Include="admin\lib\tinymce\plugins\codemirror\langs\he.js" />
+    <Content Include="admin\lib\tinymce\plugins\codemirror\langs\it.js" />
+    <Content Include="admin\lib\tinymce\plugins\codemirror\langs\ja.js" />
+    <Content Include="admin\lib\tinymce\plugins\codemirror\langs\nl.js" />
+    <Content Include="admin\lib\tinymce\plugins\codemirror\langs\no.js" />
+    <Content Include="admin\lib\tinymce\plugins\codemirror\langs\pl.js" />
+    <Content Include="admin\lib\tinymce\plugins\codemirror\langs\pt.js" />
+    <Content Include="admin\lib\tinymce\plugins\codemirror\langs\ru.js" />
+    <Content Include="admin\lib\tinymce\plugins\codemirror\langs\sv.js" />
+    <Content Include="admin\lib\tinymce\plugins\codemirror\langs\zh.js" />
+    <Content Include="admin\lib\tinymce\plugins\codemirror\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\codemirror\source.html" />
+    <Content Include="admin\lib\tinymce\plugins\codesample\css\prism.css" />
+    <Content Include="admin\lib\tinymce\plugins\codesample\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\codesample\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\codesample\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\code\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\code\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\colorpicker\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\colorpicker\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\colorpicker\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\contextmenu\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\contextmenu\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\directionality\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\directionality\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="admin\lib\tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="admin\lib\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="admin\lib\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="admin\lib\tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="admin\lib\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="admin\lib\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="admin\lib\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="admin\lib\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="admin\lib\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="admin\lib\tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="admin\lib\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="admin\lib\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="admin\lib\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="admin\lib\tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="admin\lib\tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="admin\lib\tinymce\plugins\emoticons\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\emoticons\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\fullpage\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\fullpage\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\fullscreen\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\fullscreen\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\hr\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\hr\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\imagetools\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\imagetools\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\imagetools\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\image\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\image\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\importcss\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\importcss\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\insertdatetime\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\insertdatetime\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\legacyoutput\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\legacyoutput\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\link\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\link\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\lists\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\lists\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\media\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\media\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\nonbreaking\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\nonbreaking\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\noneditable\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\noneditable\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\pagebreak\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\pagebreak\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\paste\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\paste\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\preview\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\preview\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\print\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\print\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\save\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\save\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\searchreplace\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\searchreplace\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\spellchecker\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\spellchecker\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\tabfocus\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\tabfocus\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\table\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\table\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\template\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\template\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\textcolor\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\textcolor\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\textpattern\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\textpattern\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\textpattern\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\toc\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\toc\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\toc\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="admin\lib\tinymce\plugins\visualblocks\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\visualblocks\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\visualchars\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\visualchars\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\plugins\wordcount\index.js" />
+    <Content Include="admin\lib\tinymce\plugins\wordcount\plugin.js" />
+    <Content Include="admin\lib\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="admin\lib\tinymce\skins\umbraco\content.min.css" />
+    <Content Include="admin\lib\tinymce\skins\umbraco\fonts\tinymce-small.svg" />
+    <Content Include="admin\lib\tinymce\skins\umbraco\fonts\tinymce.svg" />
+    <Content Include="admin\lib\tinymce\skins\umbraco\img\anchor.gif" />
+    <Content Include="admin\lib\tinymce\skins\umbraco\img\loader.gif" />
+    <Content Include="admin\lib\tinymce\skins\umbraco\img\object.gif" />
+    <Content Include="admin\lib\tinymce\skins\umbraco\img\trans.gif" />
+    <Content Include="admin\lib\tinymce\skins\umbraco\img\wline.gif" />
+    <Content Include="admin\lib\tinymce\skins\umbraco\skin.classic.min.css" />
+    <Content Include="admin\lib\tinymce\skins\umbraco\skin.ie7.min.css" />
+    <Content Include="admin\lib\tinymce\skins\umbraco\skin.min.css" />
+    <Content Include="admin\lib\tinymce\themes\inlite\index.js" />
+    <Content Include="admin\lib\tinymce\themes\inlite\theme.js" />
+    <Content Include="admin\lib\tinymce\themes\inlite\theme.min.js" />
+    <Content Include="admin\lib\tinymce\themes\modern\index.js" />
+    <Content Include="admin\lib\tinymce\themes\modern\theme.js" />
+    <Content Include="admin\lib\tinymce\themes\modern\theme.min.js" />
+    <Content Include="admin\lib\tinymce\themes\umbraco\theme.min.js" />
+    <Content Include="admin\lib\tinymce\tinymce.min.js" />
+    <Content Include="admin\lib\typeahead.js\typeahead.bundle.min.js" />
+    <Content Include="admin\lib\umbraco\compat.js" />
+    <Content Include="admin\lib\umbraco\Extensions.js" />
+    <Content Include="admin\lib\umbraco\LegacySpeechBubble.js" />
+    <Content Include="admin\lib\umbraco\LegacyUmbClientMgr.js" />
+    <Content Include="admin\lib\umbraco\NamespaceManager.js" />
+    <Content Include="admin\lib\underscore\underscore-min.js" />
+    <Content Include="admin\Logout.aspx" />
+    <Content Include="admin\macroResultWrapper.aspx" />
+    <Content Include="admin\Members\EditMemberGroup.aspx" />
+    <Content Include="admin\Members\MemberSearch.ascx" />
+    <Content Include="admin\Members\search.aspx" />
+    <Content Include="admin\Members\ViewMembers.aspx" />
+    <Content Include="admin\ping.aspx" />
+    <Content Include="admin\Plugins\Tinymce3\tinymce3tinymceCompress.aspx" />
+    <Content Include="admin\preview\editors\background.html" />
+    <Content Include="admin\preview\editors\border.html" />
+    <Content Include="admin\preview\editors\color.html" />
+    <Content Include="admin\preview\editors\googlefontpicker.html" />
+    <Content Include="admin\preview\editors\gridRow.html" />
+    <Content Include="admin\preview\editors\layout.html" />
+    <Content Include="admin\preview\editors\margin.html" />
+    <Content Include="admin\preview\editors\padding.html" />
+    <Content Include="admin\preview\editors\radius.html" />
+    <Content Include="admin\preview\editors\shadow.html" />
+    <Content Include="admin\preview\editors\slider.html" />
+    <Content Include="admin\preview\index.html" />
+    <Content Include="admin\publishStatus.aspx" />
+    <Content Include="admin\Search\QuickSearch.ascx" />
+    <Content Include="admin\Search\quickSearch.js" />
+    <Content Include="admin\Settings\DictionaryItemList.aspx" />
+    <Content Include="admin\Settings\EditDictionaryItem.aspx" />
+    <Content Include="admin\Settings\editLanguage.aspx" />
+    <Content Include="admin\Settings\Modals\ShowUmbracoTags.aspx" />
+    <Content Include="admin\Settings\Stylesheet\editstylesheet.aspx" />
+    <Content Include="admin\Settings\Stylesheet\Property\EditStyleSheetProperty.aspx" />
+    <Content Include="admin\Translation\default.aspx" />
+    <Content Include="admin\Translation\details.aspx" />
+    <Content Include="admin\Translation\preview.aspx" />
+    <Content Include="admin\Translation\xml.aspx" />
+    <Content Include="admin\tree.aspx" />
+    <Content Include="admin\treeInit.aspx" />
+    <Content Include="admin\umbraco.aspx" />
+    <Content Include="admin\Views\common\dashboard.html" />
+    <Content Include="admin\Views\common\dialogs\approvedcolorpicker.html" />
+    <Content Include="admin\Views\common\dialogs\content\edit.html" />
+    <Content Include="admin\Views\common\dialogs\help.html" />
+    <Content Include="admin\Views\common\dialogs\iconpicker.html" />
+    <Content Include="admin\Views\common\dialogs\insertmacro.html" />
+    <Content Include="admin\Views\common\dialogs\legacydelete.html" />
+    <Content Include="admin\Views\common\dialogs\linkpicker.html" />
+    <Content Include="admin\Views\common\dialogs\login.html" />
+    <Content Include="admin\Views\common\dialogs\macropicker.html" />
+    <Content Include="admin\Views\common\dialogs\mediapicker.html" />
+    <Content Include="admin\Views\common\dialogs\membergrouppicker.html" />
+    <Content Include="admin\Views\common\dialogs\property.html" />
+    <Content Include="admin\Views\common\dialogs\rteembed.html" />
+    <Content Include="admin\Views\common\dialogs\template\querybuilder.html" />
+    <Content Include="admin\Views\common\dialogs\template\snippet.html" />
+    <Content Include="admin\Views\common\dialogs\treepicker.html" />
+    <Content Include="admin\Views\common\dialogs\user.html" />
+    <Content Include="admin\Views\common\dialogs\ysod.html" />
+    <Content Include="admin\Views\common\legacy.html" />
+    <Content Include="admin\Views\common\login.html" />
+    <Content Include="admin\Views\common\notifications\confirmroutechange.html" />
+    <Content Include="admin\Views\common\overlays\contentpicker\contentpicker.html" />
+    <Content Include="admin\Views\common\overlays\contenttypeeditor\compositions\compositions.html" />
+    <Content Include="admin\Views\common\overlays\contenttypeeditor\editorpicker\editorpicker.html" />
+    <Content Include="admin\Views\common\overlays\contenttypeeditor\editorsettings\editorsettings.html" />
+    <Content Include="admin\Views\common\overlays\contenttypeeditor\propertysettings\propertysettings.html" />
+    <Content Include="admin\Views\common\overlays\copy\copy.html" />
+    <Content Include="admin\Views\common\overlays\embed\embed.html" />
+    <Content Include="admin\Views\common\overlays\help\help.html" />
+    <Content Include="admin\Views\common\overlays\iconpicker\iconpicker.html" />
+    <Content Include="admin\Views\common\overlays\insertfield\insertfield.html" />
+    <Content Include="admin\Views\common\overlays\insert\insert.html" />
+    <Content Include="admin\Views\common\overlays\itempicker\itempicker.html" />
+    <Content Include="admin\Views\common\overlays\linkpicker\linkpicker.html" />
+    <Content Include="admin\Views\common\overlays\macropicker\macropicker.html" />
+    <Content Include="admin\Views\common\overlays\mediaPicker\mediapicker.html" />
+    <Content Include="admin\Views\common\overlays\mediatypepicker\mediatypepicker.html" />
+    <Content Include="admin\Views\common\overlays\membergrouppicker\membergrouppicker.html" />
+    <Content Include="admin\Views\common\overlays\memberpicker\memberpicker.html" />
+    <Content Include="admin\Views\common\overlays\move\move.html" />
+    <Content Include="admin\Views\common\overlays\nodepermissions\nodepermissions.html" />
+    <Content Include="admin\Views\common\overlays\querybuilder\querybuilder.html" />
+    <Content Include="admin\Views\common\overlays\sectionpicker\sectionpicker.html" />
+    <Content Include="admin\Views\common\overlays\templatesections\templatesections.html" />
+    <Content Include="admin\Views\common\overlays\treepicker\treepicker.html" />
+    <Content Include="admin\Views\common\overlays\usergrouppicker\usergrouppicker.html" />
+    <Content Include="admin\Views\common\overlays\userpicker\userpicker.html" />
+    <Content Include="admin\Views\common\overlays\user\user.html" />
+    <Content Include="admin\Views\common\overlays\ysod\ysod.html" />
+    <Content Include="admin\Views\components\application\umb-contextmenu.html" />
+    <Content Include="admin\Views\components\application\umb-navigation.html" />
+    <Content Include="admin\Views\components\application\umb-sections.html" />
+    <Content Include="admin\Views\components\buttons\umb-button-group.html" />
+    <Content Include="admin\Views\components\buttons\umb-button.html" />
+    <Content Include="admin\Views\components\buttons\umb-toggle.html" />
+    <Content Include="admin\Views\components\content\edit.html" />
+    <Content Include="admin\Views\components\editor\subheader\umb-editor-sub-header-content-left.html" />
+    <Content Include="admin\Views\components\editor\subheader\umb-editor-sub-header-content-right.html" />
+    <Content Include="admin\Views\components\editor\subheader\umb-editor-sub-header-section.html" />
+    <Content Include="admin\Views\components\editor\subheader\umb-editor-sub-header.html" />
+    <Content Include="admin\Views\components\editor\umb-breadcrumbs.html" />
+    <Content Include="admin\Views\components\editor\umb-editor-container.html" />
+    <Content Include="admin\Views\components\editor\umb-editor-footer-content-left.html" />
+    <Content Include="admin\Views\components\editor\umb-editor-footer-content-right.html" />
+    <Content Include="admin\Views\components\editor\umb-editor-footer.html" />
+    <Content Include="admin\Views\components\editor\umb-editor-header.html" />
+    <Content Include="admin\Views\components\editor\umb-editor-menu.html" />
+    <Content Include="admin\Views\components\editor\umb-editor-navigation.html" />
+    <Content Include="admin\Views\components\editor\umb-editor-sub-views.html" />
+    <Content Include="admin\Views\components\editor\umb-editor-view.html" />
+    <Content Include="admin\Views\components\html\umb-box\umb-box-content.html" />
+    <Content Include="admin\Views\components\html\umb-box\umb-box-header.html" />
+    <Content Include="admin\Views\components\html\umb-box\umb-box.html" />
+    <Content Include="admin\Views\components\html\umb-control-group.html" />
+    <Content Include="admin\Views\components\html\umb-pane.html" />
+    <Content Include="admin\Views\components\html\umb-panel.html" />
+    <Content Include="admin\Views\components\imaging\umb-image-crop.html" />
+    <Content Include="admin\Views\components\imaging\umb-image-gravity.html" />
+    <Content Include="admin\Views\components\imaging\umb-image-thumbnail.html" />
+    <Content Include="admin\Views\components\notifications\umb-notifications.html" />
+    <Content Include="admin\Views\components\overlays\umb-overlay-backdrop.html" />
+    <Content Include="admin\Views\components\overlays\umb-overlay.html" />
+    <Content Include="admin\Views\components\property\umb-property-editor.html" />
+    <Content Include="admin\Views\components\property\umb-property-group.html" />
+    <Content Include="admin\Views\components\property\umb-property.html" />
+    <Content Include="admin\Views\components\tabs\umb-tab.html" />
+    <Content Include="admin\Views\components\tabs\umb-tabs-content.html" />
+    <Content Include="admin\Views\components\tabs\umb-tabs-nav.html" />
+    <Content Include="admin\Views\components\tree\umb-tree-search-box.html" />
+    <Content Include="admin\Views\components\tree\umb-tree-search-results.html" />
+    <Content Include="admin\Views\components\umb-avatar.html" />
+    <Content Include="admin\Views\components\umb-badge.html" />
+    <Content Include="admin\Views\components\umb-checkmark.html" />
+    <Content Include="admin\Views\components\umb-child-selector.html" />
+    <Content Include="admin\Views\components\umb-confirm-action.html" />
+    <Content Include="admin\Views\components\umb-confirm.html" />
+    <Content Include="admin\Views\components\umb-content-grid.html" />
+    <Content Include="admin\Views\components\umb-date-time-picker.html" />
+    <Content Include="admin\Views\components\umb-dropdown-item.html" />
+    <Content Include="admin\Views\components\umb-dropdown.html" />
+    <Content Include="admin\Views\components\umb-empty-state.html" />
+    <Content Include="admin\Views\components\umb-folder-grid.html" />
+    <Content Include="admin\Views\components\umb-generate-alias.html" />
+    <Content Include="admin\Views\components\umb-grid-selector.html" />
+    <Content Include="admin\Views\components\umb-groups-builder.html" />
+    <Content Include="admin\Views\components\umb-keyboard-shortcuts-overview.html" />
+    <Content Include="admin\Views\components\umb-layout-selector.html" />
+    <Content Include="admin\Views\components\umb-lightbox.html" />
+    <Content Include="admin\Views\components\umb-list-view-layout.html" />
+    <Content Include="admin\Views\components\umb-list-view-settings.html" />
+    <Content Include="admin\Views\components\umb-load-indicator.html" />
+    <Content Include="admin\Views\components\umb-locked-field.html" />
+    <Content Include="admin\Views\components\umb-media-grid.html" />
+    <Content Include="admin\Views\components\umb-mini-list-view.html" />
+    <Content Include="admin\Views\components\umb-node-preview.html" />
+    <Content Include="admin\Views\components\umb-pagination.html" />
+    <Content Include="admin\Views\components\umb-progress-bar.html" />
+    <Content Include="admin\Views\components\umb-table.html" />
+    <Content Include="admin\Views\components\umb-tooltip.html" />
+    <Content Include="admin\Views\components\upload\umb-file-dropzone.html" />
+    <Content Include="admin\Views\components\users\change-password.html" />
+    <Content Include="admin\Views\components\users\umb-permission.html" />
+    <Content Include="admin\Views\components\users\umb-user-group-preview.html" />
+    <Content Include="admin\Views\components\users\umb-user-preview.html" />
+    <Content Include="admin\Views\contentblueprints\create.html" />
+    <Content Include="admin\Views\contentblueprints\delete.html" />
+    <Content Include="admin\Views\contentblueprints\edit.html" />
+    <Content Include="admin\Views\contentblueprints\intro.html" />
+    <Content Include="admin\Views\content\copy.html" />
+    <Content Include="admin\Views\content\create.html" />
+    <Content Include="admin\Views\content\createblueprint.html" />
+    <Content Include="admin\Views\content\delete.html" />
+    <Content Include="admin\Views\content\edit.html" />
+    <Content Include="admin\Views\content\emptyrecyclebin.html" />
+    <Content Include="admin\Views\content\move.html" />
+    <Content Include="admin\Views\content\recyclebin.html" />
+    <Content Include="admin\Views\content\restore.html" />
+    <Content Include="admin\Views\content\rights.html" />
+    <Content Include="admin\Views\content\umbpreview.html" />
+    <Content Include="admin\Views\dashboard\ChangePassword.html" />
+    <Content Include="admin\Views\dashboard\default\ourumbraco.jpg" />
+    <Content Include="admin\Views\dashboard\default\StartupDashboardIntro.html" />
+    <Content Include="admin\Views\dashboard\default\StartupDashboardKits.html" />
+    <Content Include="admin\Views\dashboard\default\StartupDashboardLastEdits.html" />
+    <Content Include="admin\Views\dashboard\default\StartupDashboardVideos.html" />
+    <Content Include="admin\Views\dashboard\default\umbracotv.jpg" />
+    <Content Include="admin\Views\dashboard\developer\developerdashboardintro.html" />
+    <Content Include="admin\Views\dashboard\developer\developerdashboardvideos.html" />
+    <Content Include="admin\Views\dashboard\developer\examinemanagement.html" />
+    <Content Include="admin\Views\dashboard\developer\healthcheck.html" />
+    <Content Include="admin\Views\dashboard\developer\redirecturls.html" />
+    <Content Include="admin\Views\dashboard\developer\xmldataintegrityreport.html" />
+    <Content Include="admin\Views\dashboard\forms\formsdashboardintro.html" />
+    <Content Include="admin\Views\dashboard\media\desktopmediauploader.html" />
+    <Content Include="admin\Views\dashboard\media\mediadashboardintro.html" />
+    <Content Include="admin\Views\dashboard\media\mediadashboardvideos.html" />
+    <Content Include="admin\Views\dashboard\media\mediafolderbrowser.html" />
+    <Content Include="admin\Views\dashboard\members\membersdashboardintro.html" />
+    <Content Include="admin\Views\dashboard\members\membersdashboardvideos.html" />
+    <Content Include="admin\Views\dashboard\settings\settingsdashboardintro.html" />
+    <Content Include="admin\Views\dashboard\settings\settingsdashboardvideos.html" />
+    <Content Include="admin\Views\datatypes\create.html" />
+    <Content Include="admin\Views\datatypes\delete.html" />
+    <Content Include="admin\Views\datatypes\edit.html" />
+    <Content Include="admin\Views\datatypes\move.html" />
+    <Content Include="admin\Views\datatypes\rename.html" />
+    <Content Include="admin\Views\directives\_obsolete\umb-content-name.html" />
+    <Content Include="admin\Views\directives\_obsolete\umb-header.html" />
+    <Content Include="admin\Views\directives\_obsolete\umb-item-sorter.html" />
+    <Content Include="admin\Views\directives\_obsolete\umb-login.html" />
+    <Content Include="admin\Views\directives\_obsolete\umb-optionsmenu.html" />
+    <Content Include="admin\Views\directives\_obsolete\umb-photo-folder.html" />
+    <Content Include="admin\Views\directives\_obsolete\umb-tab-view.html" />
+    <Content Include="admin\Views\directives\_obsolete\umb-upload-dropzone.html" />
+    <Content Include="admin\Views\documenttypes\copy.html" />
+    <Content Include="admin\Views\documenttypes\create.html" />
+    <Content Include="admin\Views\documenttypes\delete.html" />
+    <Content Include="admin\Views\documenttypes\edit.html" />
+    <Content Include="admin\Views\documenttypes\move.html" />
+    <Content Include="admin\Views\documenttypes\property.html" />
+    <Content Include="admin\Views\documenttypes\propertygroup.html" />
+    <Content Include="admin\Views\documenttypes\rename.html" />
+    <Content Include="admin\Views\documenttypes\views\design\design.html" />
+    <Content Include="admin\Views\documenttypes\views\listview\listview.html" />
+    <Content Include="admin\Views\documenttypes\views\permissions\permissions.html" />
+    <Content Include="admin\Views\documenttypes\views\templates\templates.html" />
+    <Content Include="admin\Views\install\continueinstall.html" />
+    <Content Include="admin\Views\install\database.html" />
+    <Content Include="admin\Views\install\error.html" />
+    <Content Include="admin\Views\install\machinekey.html" />
+    <Content Include="admin\Views\install\permissionsreport.html" />
+    <Content Include="admin\Views\install\starterkit.html" />
+    <Content Include="admin\Views\install\upgrade.html" />
+    <Content Include="admin\Views\install\user.html" />
+    <Content Include="admin\Views\install\version7upgradereport.html" />
+    <Content Include="admin\Views\mediatypes\copy.html" />
+    <Content Include="admin\Views\mediatypes\create.html" />
+    <Content Include="admin\Views\mediatypes\delete.html" />
+    <Content Include="admin\Views\mediatypes\edit.html" />
+    <Content Include="admin\Views\mediatypes\move.html" />
+    <Content Include="admin\Views\mediatypes\rename.html" />
+    <Content Include="admin\Views\mediatypes\views\design\design.html" />
+    <Content Include="admin\Views\mediatypes\views\listview\listview.html" />
+    <Content Include="admin\Views\mediatypes\views\permissions\permissions.html" />
+    <Content Include="admin\Views\media\create.html" />
+    <Content Include="admin\Views\media\delete.html" />
+    <Content Include="admin\Views\media\edit.html" />
+    <Content Include="admin\Views\media\emptyrecyclebin.html" />
+    <Content Include="admin\Views\media\move.html" />
+    <Content Include="admin\Views\media\recyclebin.html" />
+    <Content Include="admin\Views\membertypes\create.html" />
+    <Content Include="admin\Views\membertypes\delete.html" />
+    <Content Include="admin\Views\membertypes\edit.html" />
+    <Content Include="admin\Views\membertypes\move.html" />
+    <Content Include="admin\Views\membertypes\views\design\design.html" />
+    <Content Include="admin\Views\member\create.html" />
+    <Content Include="admin\Views\member\delete.html" />
+    <Content Include="admin\Views\member\edit.html" />
+    <Content Include="admin\Views\member\list.html" />
+    <Content Include="admin\Views\packager\delete.html" />
+    <Content Include="admin\Views\packager\overview.html" />
+    <Content Include="admin\Views\packager\views\install-local.html" />
+    <Content Include="admin\Views\packager\views\installed.html" />
+    <Content Include="admin\Views\packager\views\repo.html" />
+    <Content Include="admin\Views\partialviewmacros\create.html" />
+    <Content Include="admin\Views\partialviewmacros\delete.html" />
+    <Content Include="admin\Views\partialviewmacros\edit.html" />
+    <Content Include="admin\Views\partialviews\create.html" />
+    <Content Include="admin\Views\partialviews\delete.html" />
+    <Content Include="admin\Views\partialviews\edit.html" />
+    <Content Include="admin\Views\prevalueeditors\boolean.html" />
+    <Content Include="admin\Views\prevalueeditors\decimal.html" />
+    <Content Include="admin\Views\prevalueeditors\hidden.html" />
+    <Content Include="admin\Views\prevalueeditors\imagepicker.html" />
+    <Content Include="admin\Views\prevalueeditors\mediapicker.html" />
+    <Content Include="admin\Views\prevalueeditors\multivalues.html" />
+    <Content Include="admin\Views\prevalueeditors\nodetype.html" />
+    <Content Include="admin\Views\prevalueeditors\number.html" />
+    <Content Include="admin\Views\prevalueeditors\radiobuttonlist.html" />
+    <Content Include="admin\Views\prevalueeditors\readonlykeyvalues.html" />
+    <Content Include="admin\Views\prevalueeditors\requiredfield.html" />
+    <Content Include="admin\Views\prevalueeditors\textarea.html" />
+    <Content Include="admin\Views\prevalueeditors\textstring.html" />
+    <Content Include="admin\Views\prevalueeditors\treepicker.html" />
+    <Content Include="admin\Views\prevalueeditors\treesource.html" />
+    <Content Include="admin\Views\prevalueeditors\valuetype.html" />
+    <Content Include="admin\Views\propertyeditors\boolean\boolean.html" />
+    <Content Include="admin\Views\propertyeditors\changepassword\changepassword.html" />
+    <Content Include="admin\Views\propertyeditors\checkboxlist\checkboxlist.html" />
+    <Content Include="admin\Views\propertyeditors\colorpicker\colorpicker.html" />
+    <Content Include="admin\Views\propertyeditors\colorpicker\colorpicker.prevalues.html" />
+    <Content Include="admin\Views\propertyeditors\contentpicker\contentpicker.html" />
+    <Content Include="admin\Views\propertyeditors\datepicker\datepicker.html" />
+    <Content Include="admin\Views\propertyeditors\decimal\decimal.html" />
+    <Content Include="admin\Views\propertyeditors\dropdown\dropdown.html" />
+    <Content Include="admin\Views\propertyeditors\email\email.html" />
+    <Content Include="admin\Views\propertyeditors\entitypicker\entitypicker.html" />
+    <Content Include="admin\Views\propertyeditors\fileupload\fileupload.html" />
+    <Content Include="admin\Views\propertyeditors\folderbrowser\folderbrowser.html" />
+    <Content Include="admin\Views\propertyeditors\googlemaps\googlemaps.html" />
+    <Content Include="admin\Views\propertyeditors\grid\config\grid.default.config.js" />
+    <Content Include="admin\Views\propertyeditors\grid\config\grid.default.rtestyles.css" />
+    <Content Include="admin\Views\propertyeditors\grid\dialogs\config.html" />
+    <Content Include="admin\Views\propertyeditors\grid\dialogs\editconfig.html" />
+    <Content Include="admin\Views\propertyeditors\grid\dialogs\layoutconfig.html" />
+    <Content Include="admin\Views\propertyeditors\grid\dialogs\rowconfig.html" />
+    <Content Include="admin\Views\propertyeditors\grid\dialogs\rowdeleteconfirm.html" />
+    <Content Include="admin\Views\propertyeditors\grid\editors\embed.html" />
+    <Content Include="admin\Views\propertyeditors\grid\editors\error.html" />
+    <Content Include="admin\Views\propertyeditors\grid\editors\macro.html" />
+    <Content Include="admin\Views\propertyeditors\grid\editors\media.html" />
+    <Content Include="admin\Views\propertyeditors\grid\editors\rte.html" />
+    <Content Include="admin\Views\propertyeditors\grid\editors\textstring.html" />
+    <Content Include="admin\Views\propertyeditors\grid\grid.html" />
+    <Content Include="admin\Views\propertyeditors\grid\grid.prevalues.html" />
+    <Content Include="admin\Views\propertyeditors\imagecropper\imagecropper.html" />
+    <Content Include="admin\Views\propertyeditors\imagecropper\imagecropper.prevalues.html" />
+    <Content Include="admin\Views\propertyeditors\integer\integer.html" />
+    <Content Include="admin\Views\propertyeditors\listview\bulkActionPermissions.prevalues.html" />
+    <Content Include="admin\Views\propertyeditors\listview\includeproperties.prevalues.html" />
+    <Content Include="admin\Views\propertyeditors\listview\layouts.prevalues.html" />
+    <Content Include="admin\Views\propertyeditors\listview\layouts\grid\grid.html" />
+    <Content Include="admin\Views\propertyeditors\listview\layouts\list\list.html" />
+    <Content Include="admin\Views\propertyeditors\listview\listview.html" />
+    <Content Include="admin\Views\propertyeditors\listview\orderDirection.prevalues.html" />
+    <Content Include="admin\Views\propertyeditors\listview\sortby.prevalues.html" />
+    <Content Include="admin\Views\propertyeditors\macrocontainer\macrocontainer.html" />
+    <Content Include="admin\Views\propertyeditors\macrocontainer\macrolist.prevalues.html" />
+    <Content Include="admin\Views\propertyeditors\markdowneditor\markdowneditor.html" />
+    <Content Include="admin\Views\propertyeditors\mediapicker\mediapicker.html" />
+    <Content Include="admin\Views\propertyeditors\membergrouppicker\membergrouppicker.html" />
+    <Content Include="admin\Views\propertyeditors\membergroups\membergroups.html" />
+    <Content Include="admin\Views\propertyeditors\memberpicker\memberpicker.html" />
+    <Content Include="admin\Views\propertyeditors\multipletextbox\multipletextbox.html" />
+    <Content Include="admin\Views\propertyeditors\nestedcontent\nestedcontent.doctypepicker.html" />
+    <Content Include="admin\Views\propertyeditors\nestedcontent\nestedcontent.editor.html" />
+    <Content Include="admin\Views\propertyeditors\nestedcontent\nestedcontent.html" />
+    <Content Include="admin\Views\propertyeditors\radiobuttons\radiobuttons.html" />
+    <Content Include="admin\Views\propertyeditors\readonlyvalue\readonlyvalue.html" />
+    <Content Include="admin\Views\propertyeditors\relatedlinks\relatedlinks.html" />
+    <Content Include="admin\Views\propertyeditors\rte\rte.html" />
+    <Content Include="admin\Views\propertyeditors\rte\rte.prevalues.html" />
+    <Content Include="admin\Views\propertyeditors\slider\handle.prevalues.html" />
+    <Content Include="admin\Views\propertyeditors\slider\orientation.prevalues.html" />
+    <Content Include="admin\Views\propertyeditors\slider\slider.html" />
+    <Content Include="admin\Views\propertyeditors\slider\tooltip.prevalues.html" />
+    <Content Include="admin\Views\propertyeditors\tags\tags.html" />
+    <Content Include="admin\Views\propertyeditors\tags\tags.prevalues.html" />
+    <Content Include="admin\Views\propertyeditors\templatepicker\templatepicker.html" />
+    <Content Include="admin\Views\propertyeditors\test\test.html" />
+    <Content Include="admin\Views\propertyeditors\textarea\textarea.html" />
+    <Content Include="admin\Views\propertyeditors\textbox\textbox.html" />
+    <Content Include="admin\Views\propertyeditors\ultrasimple\ultrasimple.html" />
+    <Content Include="admin\Views\propertyeditors\urllist\urllist.html" />
+    <Content Include="admin\Views\propertyeditors\validationtest\validationtest.html" />
+    <Content Include="admin\Views\scripts\create.html" />
+    <Content Include="admin\Views\scripts\delete.html" />
+    <Content Include="admin\Views\scripts\edit.html" />
+    <Content Include="admin\Views\templates\delete.html" />
+    <Content Include="admin\Views\templates\edit.html" />
+    <Content Include="admin\Views\users\group.html" />
+    <Content Include="admin\Views\users\overview.html" />
+    <Content Include="admin\Views\users\user.html" />
+    <Content Include="admin\Views\users\views\groups\groups.html" />
+    <Content Include="admin\Views\users\views\users\users.html" />
+    <Content Include="admin\Webservices\ajax.js" />
+    <Content Include="admin\Webservices\CacheRefresher.asmx" />
+    <Content Include="admin\Webservices\CheckForUpgrade.asmx" />
+    <Content Include="admin\Webservices\CMSNode.asmx" />
+    <Content Include="admin\Webservices\codeEditorSave.asmx" />
+    <Content Include="admin\Webservices\legacyAjaxCalls.asmx" />
+    <Content Include="admin\Webservices\MacroContainerService.asmx" />
+    <Content Include="admin\Webservices\nodeSorter.asmx" />
+    <Content Include="admin\Webservices\progressStatus.asmx" />
+    <Content Include="admin\Webservices\publication.asmx" />
+    <Content Include="admin\Webservices\TreeClientService.asmx" />
+    <Content Include="admin\Webservices\wsdl.xslt" />
+    <Content Include="admin\Xslt\macroGetCurrent.xsl" />
+    <Content Include="admin\Xslt\macroGetSubs.xsl" />
+    <Content Include="admin\Xslt\searchResult.xslt" />
+    <Content Include="admin\Xslt\sqlNodeHierachy.xslt" />
+    <Content Include="admin\Xslt\Templates\Breadcrumb.xslt" />
+    <Content Include="admin\Xslt\Templates\Clean.xslt" />
+    <Content Include="admin\Xslt\Templates\ListSubPagesAsThumbnails.xslt" />
+    <Content Include="admin\Xslt\Templates\ListSubPagesByDateAndLimit.xslt" />
+    <Content Include="admin\Xslt\Templates\ListSubPagesByDocumentType.xslt" />
+    <Content Include="admin\Xslt\Templates\ListSubPagesByLevel.xslt" />
+    <Content Include="admin\Xslt\Templates\ListSubPagesFromAChangableSource.xslt" />
+    <Content Include="admin\Xslt\Templates\ListSubPagesFromCurrentPage.xslt" />
+    <Content Include="admin\Xslt\Templates\ListThumbnailsFromCurrentPage.xslt" />
+    <Content Include="admin\Xslt\Templates\ListWholeStructureFromCurrentPage.xslt" />
+    <Content Include="admin\Xslt\Templates\NavigationPrototype.xslt" />
+    <Content Include="admin\Xslt\Templates\RelatedLinks.xslt" />
+    <Content Include="admin\Xslt\Templates\RSSFeed.xslt" />
+    <Content Include="admin\Xslt\Templates\Schema2\Breadcrumb.xslt" />
+    <Content Include="admin\Xslt\Templates\Schema2\Clean.xslt" />
+    <Content Include="admin\Xslt\Templates\Schema2\ListSubPagesAsThumbnails.xslt" />
+    <Content Include="admin\Xslt\Templates\Schema2\ListSubPagesByDateAndLimit.xslt" />
+    <Content Include="admin\Xslt\Templates\Schema2\ListSubPagesByDocumentType.xslt" />
+    <Content Include="admin\Xslt\Templates\Schema2\ListSubPagesByLevel.xslt" />
+    <Content Include="admin\Xslt\Templates\Schema2\ListSubPagesFromAChangableSource.xslt" />
+    <Content Include="admin\Xslt\Templates\Schema2\ListSubPagesFromCurrentPage.xslt" />
+    <Content Include="admin\Xslt\Templates\Schema2\ListThumbnailsFromCurrentPage.xslt" />
+    <Content Include="admin\Xslt\Templates\Schema2\ListWholeStructureFromCurrentPage.xslt" />
+    <Content Include="admin\Xslt\Templates\Schema2\NavigationPrototype.xslt" />
+    <Content Include="admin\Xslt\Templates\Schema2\RelatedLinks.xslt" />
+    <Content Include="admin\Xslt\Templates\Schema2\RSSFeed.xslt" />
+    <Content Include="admin\Xslt\Templates\Schema2\Sitemap.xslt" />
+    <Content Include="admin\Xslt\Templates\Schema2\TablePrototype.xslt" />
+    <Content Include="admin\Xslt\Templates\Sitemap.xslt" />
+    <Content Include="admin\Xslt\Templates\TablePrototype.xslt" />
+    <Content Include="bin\amd64\Microsoft.VC90.CRT\msvcr90.dll" />
+    <Content Include="bin\amd64\Microsoft.VC90.CRT\README_ENU.txt" />
+    <Content Include="bin\amd64\sqlceca40.dll" />
+    <Content Include="bin\amd64\sqlcecompact40.dll" />
+    <Content Include="bin\amd64\sqlceer40EN.dll" />
+    <Content Include="bin\amd64\sqlceme40.dll" />
+    <Content Include="bin\amd64\sqlceqp40.dll" />
+    <Content Include="bin\amd64\sqlcese40.dll" />
+    <Content Include="bin\AutoMapper.dll" />
+    <Content Include="bin\AutoMapper.Net4.dll" />
+    <Content Include="bin\AutoMapper.Net4.pdb" />
+    <Content Include="bin\AutoMapper.pdb" />
+    <Content Include="bin\AutoMapper.xml" />
+    <Content Include="bin\businesslogic.dll" />
+    <Content Include="bin\businesslogic.xml" />
+    <Content Include="bin\ClientDependency.Core.dll" />
+    <Content Include="bin\ClientDependency.Core.Mvc.dll" />
+    <Content Include="bin\ClientDependency.Core.Mvc.pdb" />
+    <Content Include="bin\ClientDependency.Core.pdb" />
+    <Content Include="bin\cms.dll" />
+    <Content Include="bin\cms.xml" />
+    <Content Include="bin\controls.dll" />
+    <Content Include="bin\controls.xml" />
+    <Content Include="bin\cs\Microsoft.Build.resources.dll" />
+    <Content Include="bin\cs\Microsoft.Build.Tasks.Core.resources.dll" />
+    <Content Include="bin\cs\Microsoft.Build.Utilities.Core.resources.dll" />
+    <Content Include="bin\de\Microsoft.Build.resources.dll" />
+    <Content Include="bin\de\Microsoft.Build.Tasks.Core.resources.dll" />
+    <Content Include="bin\de\Microsoft.Build.Utilities.Core.resources.dll" />
+    <Content Include="bin\en\Microsoft.Build.resources.dll" />
+    <Content Include="bin\en\Microsoft.Build.Tasks.Core.resources.dll" />
+    <Content Include="bin\en\Microsoft.Build.Utilities.Core.resources.dll" />
+    <Content Include="bin\Esent.Interop.dll" />
+    <Content Include="bin\Esent.Interop.pdb" />
+    <Content Include="bin\Esent.Interop.xml" />
+    <Content Include="bin\es\Microsoft.Build.resources.dll" />
+    <Content Include="bin\es\Microsoft.Build.Tasks.Core.resources.dll" />
+    <Content Include="bin\es\Microsoft.Build.Utilities.Core.resources.dll" />
+    <Content Include="bin\Examine.dll" />
+    <Content Include="bin\Examine.pdb" />
+    <Content Include="bin\fr\Microsoft.Build.resources.dll" />
+    <Content Include="bin\fr\Microsoft.Build.Tasks.Core.resources.dll" />
+    <Content Include="bin\fr\Microsoft.Build.Utilities.Core.resources.dll" />
+    <Content Include="bin\HtmlAgilityPack.dll" />
+    <Content Include="bin\HtmlAgilityPack.pdb" />
+    <Content Include="bin\HtmlAgilityPack.xml" />
+    <Content Include="bin\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="bin\ImageProcessor.dll" />
+    <Content Include="bin\ImageProcessor.Web.dll" />
+    <Content Include="bin\interfaces.dll" />
+    <Content Include="bin\interfaces.xml" />
+    <Content Include="bin\it\Microsoft.Build.resources.dll" />
+    <Content Include="bin\it\Microsoft.Build.Tasks.Core.resources.dll" />
+    <Content Include="bin\it\Microsoft.Build.Utilities.Core.resources.dll" />
+    <Content Include="bin\ja\Microsoft.Build.resources.dll" />
+    <Content Include="bin\ja\Microsoft.Build.Tasks.Core.resources.dll" />
+    <Content Include="bin\ja\Microsoft.Build.Utilities.Core.resources.dll" />
+    <Content Include="bin\ko\Microsoft.Build.resources.dll" />
+    <Content Include="bin\ko\Microsoft.Build.Tasks.Core.resources.dll" />
+    <Content Include="bin\ko\Microsoft.Build.Utilities.Core.resources.dll" />
+    <Content Include="bin\Log4Net.Async.dll" />
+    <Content Include="bin\log4net.dll" />
+    <Content Include="bin\Lucene.Net.dll" />
+    <Content Include="bin\Lucene.Net.xml" />
+    <Content Include="bin\MarkdownSharp.dll" />
+    <Content Include="bin\Microsoft.ApplicationBlocks.Data.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Core.xml" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Owin.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Owin.xml" />
+    <Content Include="bin\Microsoft.AspNet.SignalR.Core.dll" />
+    <Content Include="bin\Microsoft.AspNet.SignalR.Core.xml" />
+    <Content Include="bin\Microsoft.Build.dll" />
+    <Content Include="bin\Microsoft.Build.Framework.dll" />
+    <Content Include="bin\Microsoft.Build.Tasks.Core.dll" />
+    <Content Include="bin\Microsoft.Build.Utilities.Core.dll" />
+    <Content Include="bin\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\Microsoft.CodeAnalysis.CSharp.Workspaces.dll" />
+    <Content Include="bin\Microsoft.CodeAnalysis.CSharp.Workspaces.xml" />
+    <Content Include="bin\Microsoft.CodeAnalysis.CSharp.xml" />
+    <Content Include="bin\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll" />
+    <Content Include="bin\Microsoft.CodeAnalysis.VisualBasic.Workspaces.xml" />
+    <Content Include="bin\Microsoft.CodeAnalysis.VisualBasic.xml" />
+    <Content Include="bin\Microsoft.CodeAnalysis.Workspaces.Desktop.dll" />
+    <Content Include="bin\Microsoft.CodeAnalysis.Workspaces.Desktop.xml" />
+    <Content Include="bin\Microsoft.CodeAnalysis.Workspaces.dll" />
+    <Content Include="bin\Microsoft.CodeAnalysis.Workspaces.xml" />
+    <Content Include="bin\Microsoft.CodeAnalysis.xml" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\Microsoft.IO.RecyclableMemoryStream.dll" />
+    <Content Include="bin\Microsoft.IO.RecyclableMemoryStream.pdb" />
+    <Content Include="bin\Microsoft.Owin.dll" />
+    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.dll" />
+    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.Cookies.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.Cookies.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.OAuth.dll" />
+    <Content Include="bin\Microsoft.Owin.Security.OAuth.xml" />
+    <Content Include="bin\Microsoft.Owin.Security.xml" />
+    <Content Include="bin\Microsoft.Owin.xml" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\MiniProfiler.dll" />
+    <Content Include="bin\MiniProfiler.pdb" />
+    <Content Include="bin\MiniProfiler.xml" />
+    <Content Include="bin\MySql.Data.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\Owin.dll" />
+    <Content Include="bin\PCLAppConfig.dll" />
+    <Content Include="bin\PCLAppConfig.FileSystemStream.Abstractions.dll" />
+    <Content Include="bin\PCLAppConfig.FileSystemStream.dll" />
+    <Content Include="bin\PCLStorage.Abstractions.dll" />
+    <Content Include="bin\PCLStorage.Abstractions.xml" />
+    <Content Include="bin\PCLStorage.dll" />
+    <Content Include="bin\PCLStorage.xml" />
+    <Content Include="bin\pl\Microsoft.Build.resources.dll" />
+    <Content Include="bin\pl\Microsoft.Build.Tasks.Core.resources.dll" />
+    <Content Include="bin\pl\Microsoft.Build.Utilities.Core.resources.dll" />
+    <Content Include="bin\PracticeTest.dll" />
+    <Content Include="bin\PracticeTest.pdb" />
+    <Content Include="bin\pt-BR\Microsoft.Build.resources.dll" />
+    <Content Include="bin\pt-BR\Microsoft.Build.Tasks.Core.resources.dll" />
+    <Content Include="bin\pt-BR\Microsoft.Build.Utilities.Core.resources.dll" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\csi.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\roslyn\Microsoft.Win32.Primitives.dll" />
+    <Content Include="bin\roslyn\System.AppContext.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Console.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.Process.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="bin\roslyn\System.IO.Compression.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.DriveInfo.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\roslyn\System.IO.Pipes.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\System.Security.AccessControl.dll" />
+    <Content Include="bin\roslyn\System.Security.Claims.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="bin\roslyn\System.Security.Principal.Windows.dll" />
+    <Content Include="bin\roslyn\System.Text.Encoding.CodePages.dll" />
+    <Content Include="bin\roslyn\System.Threading.Thread.dll" />
+    <Content Include="bin\roslyn\System.ValueTuple.dll" />
+    <Content Include="bin\roslyn\System.Xml.ReaderWriter.dll" />
+    <Content Include="bin\roslyn\System.Xml.XmlDocument.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\ru\Microsoft.Build.resources.dll" />
+    <Content Include="bin\ru\Microsoft.Build.Tasks.Core.resources.dll" />
+    <Content Include="bin\ru\Microsoft.Build.Utilities.Core.resources.dll" />
+    <Content Include="bin\Semver.dll" />
+    <Content Include="bin\Spxus.Calture.dll" />
+    <Content Include="bin\Spxus.Core.dll" />
+    <Content Include="bin\Spxus.Email.dll" />
+    <Content Include="bin\Spxus.Umbraco.Extend.dll" />
+    <Content Include="bin\SQLCE4Umbraco.dll" />
+    <Content Include="bin\SQLCE4Umbraco.xml" />
+    <Content Include="bin\System.AppContext.dll" />
+    <Content Include="bin\System.Collections.Immutable.dll" />
+    <Content Include="bin\System.Collections.Immutable.xml" />
+    <Content Include="bin\System.Composition.AttributedModel.dll" />
+    <Content Include="bin\System.Composition.Convention.dll" />
+    <Content Include="bin\System.Composition.Hosting.dll" />
+    <Content Include="bin\System.Composition.Runtime.dll" />
+    <Content Include="bin\System.Composition.TypedParts.dll" />
+    <Content Include="bin\System.Console.dll" />
+    <Content Include="bin\System.Data.SqlServerCe.dll" />
+    <Content Include="bin\System.Data.SqlServerCe.Entity.dll" />
+    <Content Include="bin\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="bin\System.Diagnostics.StackTrace.dll" />
+    <Content Include="bin\System.IO.Compression.dll" />
+    <Content Include="bin\System.IO.FileSystem.dll" />
+    <Content Include="bin\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\System.Net.Http.Extensions.dll" />
+    <Content Include="bin\System.Net.Http.Extensions.xml" />
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.xml" />
+    <Content Include="bin\System.Net.Http.Primitives.dll" />
+    <Content Include="bin\System.Net.Http.Primitives.xml" />
+    <Content Include="bin\System.Reflection.Metadata.dll" />
+    <Content Include="bin\System.Reflection.Metadata.xml" />
+    <Content Include="bin\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="bin\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="bin\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="bin\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="bin\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="bin\System.Text.Encoding.CodePages.dll" />
+    <Content Include="bin\System.Threading.Tasks.Dataflow.dll" />
+    <Content Include="bin\System.Threading.Tasks.Dataflow.xml" />
+    <Content Include="bin\System.Threading.Thread.dll" />
+    <Content Include="bin\System.ValueTuple.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Http.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.xml" />
+    <Content Include="bin\System.Web.Http.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.xml" />
+    <Content Include="bin\System.Web.WebPages.xml" />
+    <Content Include="bin\System.Xml.ReaderWriter.dll" />
+    <Content Include="bin\System.Xml.XmlDocument.dll" />
+    <Content Include="bin\System.Xml.XPath.dll" />
+    <Content Include="bin\System.Xml.XPath.XDocument.dll" />
+    <Content Include="bin\TidyNet.dll" />
+    <Content Include="bin\tr\Microsoft.Build.resources.dll" />
+    <Content Include="bin\tr\Microsoft.Build.Tasks.Core.resources.dll" />
+    <Content Include="bin\tr\Microsoft.Build.Utilities.Core.resources.dll" />
+    <Content Include="bin\Umbraco.Core.dll" />
+    <Content Include="bin\Umbraco.Core.xml" />
+    <Content Include="bin\umbraco.DataLayer.dll" />
+    <Content Include="bin\umbraco.DataLayer.xml" />
+    <Content Include="bin\umbraco.dll" />
+    <Content Include="bin\umbraco.editorControls.dll" />
+    <Content Include="bin\umbraco.editorControls.xml" />
+    <Content Include="bin\umbraco.MacroEngines.dll" />
+    <Content Include="bin\umbraco.MacroEngines.xml" />
+    <Content Include="bin\Umbraco.ModelsBuilder.dll" />
+    <Content Include="bin\Umbraco.ModelsBuilder.pdb" />
+    <Content Include="bin\umbraco.providers.dll" />
+    <Content Include="bin\umbraco.providers.xml" />
+    <Content Include="bin\Umbraco.Web.UI.dll" />
+    <Content Include="bin\Umbraco.Web.UI.xml" />
+    <Content Include="bin\umbraco.xml" />
+    <Content Include="bin\UmbracoExamine.dll" />
+    <Content Include="bin\UmbracoExamine.xml" />
+    <Content Include="bin\x86\Microsoft.VC90.CRT\msvcr90.dll" />
+    <Content Include="bin\x86\Microsoft.VC90.CRT\README_ENU.txt" />
+    <Content Include="bin\x86\sqlceca40.dll" />
+    <Content Include="bin\x86\sqlcecompact40.dll" />
+    <Content Include="bin\x86\sqlceer40EN.dll" />
+    <Content Include="bin\x86\sqlceme40.dll" />
+    <Content Include="bin\x86\sqlceqp40.dll" />
+    <Content Include="bin\x86\sqlcese40.dll" />
+    <Content Include="bin\zh-Hans\Microsoft.Build.resources.dll" />
+    <Content Include="bin\zh-Hans\Microsoft.Build.Tasks.Core.resources.dll" />
+    <Content Include="bin\zh-Hans\Microsoft.Build.Utilities.Core.resources.dll" />
+    <Content Include="bin\zh-Hant\Microsoft.Build.resources.dll" />
+    <Content Include="bin\zh-Hant\Microsoft.Build.Tasks.Core.resources.dll" />
+    <Content Include="bin\zh-Hant\Microsoft.Build.Utilities.Core.resources.dll" />
+    <Content Include="config\imageprocessor\security.config" />
+    <Content Include="config\imageprocessor\processing.config" />
+    <Content Include="config\imageprocessor\cache.config" />
+    <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
+    <Content Include="css\creative.css" />
+    <Content Include="css\creative.min.css" />
+    <Content Include="img\header.jpg" />
+    <Content Include="img\portfolio\fullsize\1.jpg" />
+    <Content Include="img\portfolio\fullsize\2.jpg" />
+    <Content Include="img\portfolio\fullsize\3.jpg" />
+    <Content Include="img\portfolio\fullsize\4.jpg" />
+    <Content Include="img\portfolio\fullsize\5.jpg" />
+    <Content Include="img\portfolio\fullsize\6.jpg" />
+    <Content Include="img\portfolio\thumbnails\1.jpg" />
+    <Content Include="img\portfolio\thumbnails\2.jpg" />
+    <Content Include="img\portfolio\thumbnails\3.jpg" />
+    <Content Include="img\portfolio\thumbnails\4.jpg" />
+    <Content Include="img\portfolio\thumbnails\5.jpg" />
+    <Content Include="img\portfolio\thumbnails\6.jpg" />
+    <Content Include="js\creative.js" />
+    <Content Include="js\creative.min.js" />
+    <Content Include="logo\logo.png" />
+    <Content Include="Media\Web.config" />
+    <Content Include="config\umbracoSettings.config" />
+    <Content Include="config\trees.config" />
+    <Content Include="config\tinyMceConfig.config" />
+    <Content Include="config\scripting.config" />
+    <Content Include="config\metablogConfig.config" />
+    <Content Include="config\log4net.config" />
+    <Content Include="config\HealthChecks.config" />
+    <Content Include="config\FileSystemProviders.config" />
+    <Content Include="config\feedProxy.config" />
+    <Content Include="config\ExamineSettings.config" />
+    <Content Include="config\ExamineIndex.config" />
+    <Content Include="config\EmbeddedMedia.config" />
+    <Content Include="config\Dashboard.config" />
+    <Content Include="config\ClientDependency.config" />
+    <Content Include="config\BaseRestExtensions.config" />
+    <Content Include="config\applications.config" />
+    <Content Include="config\404handlers.config" />
+    <Content Include="admin\Xslt\Web.config" />
+    <Content Include="admin\Webservices\TreeDataService.ashx" />
+    <Content Include="admin\Webservices\TagsAutoCompleteHandler.ashx" />
+    <Content Include="admin\Views\Default.cshtml" />
+    <Content Include="admin\Views\AuthorizeUpgrade.cshtml" />
+    <Content Include="admin\Translation\translationTasks.dtd" />
+    <Content Include="admin\Search\QuickSearchHandler.ashx" />
+    <Content Include="admin\PartialViewMacros\Templates\SiteMap.cshtml" />
+    <Content Include="admin\PartialViewMacros\Templates\RegisterMember.cshtml" />
+    <Content Include="admin\PartialViewMacros\Templates\Navigation.cshtml" />
+    <Content Include="admin\PartialViewMacros\Templates\MultinodeTree-picker.cshtml" />
+    <Content Include="admin\PartialViewMacros\Templates\LoginStatus.cshtml" />
+    <Content Include="admin\PartialViewMacros\Templates\Login.cshtml" />
+    <Content Include="admin\PartialViewMacros\Templates\ListImagesFromMediaFolder.cshtml" />
+    <Content Include="admin\PartialViewMacros\Templates\ListDescendantsFromCurrentPage.cshtml" />
+    <Content Include="admin\PartialViewMacros\Templates\ListChildPagesWithDoctype.cshtml" />
+    <Content Include="admin\PartialViewMacros\Templates\ListChildPagesOrderedByProperty.cshtml" />
+    <Content Include="admin\PartialViewMacros\Templates\ListChildPagesOrderedByName.cshtml" />
+    <Content Include="admin\PartialViewMacros\Templates\ListChildPagesOrderedByDate.cshtml" />
+    <Content Include="admin\PartialViewMacros\Templates\ListChildPagesFromCurrentPage.cshtml" />
+    <Content Include="admin\PartialViewMacros\Templates\ListChildPagesFromChangeableSource.cshtml" />
+    <Content Include="admin\PartialViewMacros\Templates\ListAncestorsFromCurrentPage.cshtml" />
+    <Content Include="admin\PartialViewMacros\Templates\Gallery.cshtml" />
+    <Content Include="admin\PartialViewMacros\Templates\Empty.cshtml" />
+    <Content Include="admin\PartialViewMacros\Templates\Empty %28ForUseWithCustomViews%29.cshtml" />
+    <Content Include="admin\PartialViewMacros\Templates\EditProfile.cshtml" />
+    <Content Include="admin\PartialViewMacros\Templates\Breadcrumb.cshtml" />
+    <Content Include="admin\Masterpages\umbracoPage.Master" />
+    <Content Include="admin\Masterpages\umbracoDialog.Master" />
+    <Content Include="admin\Masterpages\default.Master" />
+    <Content Include="admin\lib\underscore\underscore-min.map" />
+    <Content Include="admin\lib\tinymce\skins\umbraco\fonts\tinymce.woff" />
+    <Content Include="admin\lib\tinymce\skins\umbraco\fonts\tinymce.ttf" />
+    <Content Include="admin\lib\tinymce\skins\umbraco\fonts\tinymce.eot" />
+    <Content Include="admin\lib\tinymce\skins\umbraco\fonts\tinymce-small.woff" />
+    <Content Include="admin\lib\tinymce\skins\umbraco\fonts\tinymce-small.ttf" />
+    <Content Include="admin\lib\tinymce\skins\umbraco\fonts\tinymce-small.eot" />
+    <Content Include="admin\lib\tinymce\skins\umbraco\fonts\readme.md" />
+    <Content Include="admin\lib\jquery\jquery.min.map" />
+    <Content Include="admin\lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="admin\lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="admin\lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="admin\lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="admin\lib\codemirror\mode\razor\LICENSE" />
+    <Content Include="admin\lib\bootstrap\less\wells.less" />
+    <Content Include="admin\lib\bootstrap\less\variables.less" />
+    <Content Include="admin\lib\bootstrap\less\utilities.less" />
+    <Content Include="admin\lib\bootstrap\less\type.less" />
+    <Content Include="admin\lib\bootstrap\less\tooltip.less" />
+    <Content Include="admin\lib\bootstrap\less\thumbnails.less" />
+    <Content Include="admin\lib\bootstrap\less\tables.less" />
+    <Content Include="admin\lib\bootstrap\less\sprites.less" />
+    <Content Include="admin\lib\bootstrap\less\scaffolding.less" />
+    <Content Include="admin\lib\bootstrap\less\responsive.less" />
+    <Content Include="admin\lib\bootstrap\less\responsive-utilities.less" />
+    <Content Include="admin\lib\bootstrap\less\responsive-navbar.less" />
+    <Content Include="admin\lib\bootstrap\less\responsive-768px-979px.less" />
+    <Content Include="admin\lib\bootstrap\less\responsive-767px-max.less" />
+    <Content Include="admin\lib\bootstrap\less\responsive-1200px-min.less" />
+    <Content Include="admin\lib\bootstrap\less\reset.less" />
+    <Content Include="admin\lib\bootstrap\less\progress-bars.less" />
+    <Content Include="admin\lib\bootstrap\less\popovers.less" />
+    <Content Include="admin\lib\bootstrap\less\pagination.less" />
+    <Content Include="admin\lib\bootstrap\less\pager.less" />
+    <Content Include="admin\lib\bootstrap\less\navs.less" />
+    <Content Include="admin\lib\bootstrap\less\navbar.less" />
+    <Content Include="admin\lib\bootstrap\less\modals.less" />
+    <Content Include="admin\lib\bootstrap\less\mixins.less" />
+    <Content Include="admin\lib\bootstrap\less\media.less" />
+    <Content Include="admin\lib\bootstrap\less\layouts.less" />
+    <Content Include="admin\lib\bootstrap\less\labels-badges.less" />
+    <Content Include="admin\lib\bootstrap\less\hero-unit.less" />
+    <Content Include="admin\lib\bootstrap\less\grid.less" />
+    <Content Include="admin\lib\bootstrap\less\forms.less" />
+    <Content Include="admin\lib\bootstrap\less\dropdowns.less" />
+    <Content Include="admin\lib\bootstrap\less\component-animations.less" />
+    <Content Include="admin\lib\bootstrap\less\code.less" />
+    <Content Include="admin\lib\bootstrap\less\close.less" />
+    <Content Include="admin\lib\bootstrap\less\carousel.less" />
+    <Content Include="admin\lib\bootstrap\less\buttons.less" />
+    <Content Include="admin\lib\bootstrap\less\button-groups.less" />
+    <Content Include="admin\lib\bootstrap\less\breadcrumbs.less" />
+    <Content Include="admin\lib\bootstrap\less\bootstrap.less" />
+    <Content Include="admin\lib\bootstrap\less\alerts.less" />
+    <Content Include="admin\lib\bootstrap\less\accordion.less" />
+    <Content Include="admin\lib\bootstrap-tabdrop\README.md" />
+    <Content Include="admin\lib\angular-local-storage\angular-local-storage.min.js.map" />
+    <Content Include="admin\lib\angular-dynamic-locale\tmhDynamicLocale.min.js.map" />
+    <Content Include="admin\Js\web.config" />
+    <Content Include="admin\Install\Views\Web.config" />
+    <Content Include="admin\Install\Views\Index.cshtml" />
+    <Content Include="admin\assets\less\slider.less" />
+    <Content Include="admin\assets\less\shadow.less" />
+    <Content Include="admin\assets\less\radius.less" />
+    <Content Include="admin\assets\less\padding.less" />
+    <Content Include="admin\assets\less\margin.less" />
+    <Content Include="admin\assets\less\layout.less" />
+    <Content Include="admin\assets\less\gridRow.less" />
+    <Content Include="admin\assets\less\googlefontpicker.less" />
+    <Content Include="admin\assets\less\color.less" />
+    <Content Include="admin\assets\less\border.less" />
+    <Content Include="admin\assets\less\background.less" />
+    <Content Include="admin\assets\fonts\opensans\OpenSans-Semibold-webfont.woff" />
+    <Content Include="admin\assets\fonts\opensans\OpenSans-Semibold-webfont.ttf" />
+    <Content Include="admin\assets\fonts\opensans\OpenSans-Semibold-webfont.eot" />
+    <Content Include="admin\assets\fonts\opensans\OpenSans-Regular.ttf" />
+    <Content Include="admin\assets\fonts\opensans\OpenSans-Regular-webfont.woff" />
+    <Content Include="admin\assets\fonts\opensans\OpenSans-Regular-webfont.ttf" />
+    <Content Include="admin\assets\fonts\opensans\OpenSans-Regular-webfont.eot" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-Regular.woff2" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-Regular.woff" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-Regular.ttf" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-Regular.eot" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-LightItalic.woff2" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-LightItalic.woff" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-LightItalic.ttf" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-LightItalic.eot" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-Light.woff2" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-Light.woff" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-Light.ttf" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-Light.eot" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-Italic.woff2" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-Italic.woff" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-Italic.ttf" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-Italic.eot" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-BoldItalic.woff2" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-BoldItalic.woff" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-BoldItalic.ttf" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-BoldItalic.eot" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-Bold.woff2" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-Bold.woff" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-Bold.ttf" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-Bold.eot" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-BlackItalic.woff2" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-BlackItalic.woff" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-BlackItalic.ttf" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-BlackItalic.eot" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-Black.woff2" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-Black.woff" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-Black.ttf" />
+    <Content Include="admin\assets\fonts\lato\LatoLatin-Black.eot" />
+    <Content Include="admin\assets\fonts\helveticons\helveticons.woff" />
+    <Content Include="admin\assets\fonts\helveticons\helveticons.ttf" />
+    <Content Include="admin\assets\fonts\helveticons\helveticons.eot" />
+    <Content Include="bin\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
+    <Content Include="bin\PracticeTest.dll.config" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.exe.config" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="bin\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
+    <None Include="packages.config" />
+    <Content Include="scss\index.html" />
+    <Content Include="SetUpUmbraco.txt" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="vendor\jquery-easing\jquery.easing.compatibility.js" />
+    <Content Include="vendor\jquery-easing\jquery.easing.js" />
+    <Content Include="vendor\jquery-easing\jquery.easing.min.js" />
+    <Content Include="vendor\jquery\jquery.js" />
+    <Content Include="vendor\jquery\jquery.min.js" />
+    <Content Include="vendor\magnific-popup\jquery.magnific-popup.js" />
+    <Content Include="vendor\magnific-popup\jquery.magnific-popup.min.js" />
+    <Content Include="vendor\magnific-popup\magnific-popup.css" />
+    <Content Include="vendor\scrollreveal\scrollreveal.js" />
+    <Content Include="vendor\scrollreveal\scrollreveal.min.js" />
+    <Content Include="Views\Partials\Menu.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Macro.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Embed.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap2-Fluid.cshtml" />
+    <Content Include="scss\creative.scss" />
+    <Content Include="scss\_bootstrap-overrides.scss" />
+    <Content Include="scss\_cta.scss" />
+    <Content Include="scss\_global.scss" />
+    <Content Include="scss\_masthead.scss" />
+    <Content Include="scss\_mixins.scss" />
+    <Content Include="scss\_navbar.scss" />
+    <Content Include="scss\_portfolio.scss" />
+    <Content Include="scss\_services.scss" />
+    <Content Include="scss\_variables.scss" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="vendor\font-awesome\less\animated.less" />
+    <Content Include="vendor\font-awesome\less\bordered-pulled.less" />
+    <Content Include="vendor\font-awesome\less\core.less" />
+    <Content Include="vendor\font-awesome\less\fixed-width.less" />
+    <Content Include="vendor\font-awesome\less\font-awesome.less" />
+    <Content Include="vendor\font-awesome\less\icons.less" />
+    <Content Include="vendor\font-awesome\less\larger.less" />
+    <Content Include="vendor\font-awesome\less\list.less" />
+    <Content Include="vendor\font-awesome\less\mixins.less" />
+    <Content Include="vendor\font-awesome\less\path.less" />
+    <Content Include="vendor\font-awesome\less\rotated-flipped.less" />
+    <Content Include="vendor\font-awesome\less\screen-reader.less" />
+    <Content Include="vendor\font-awesome\less\stacked.less" />
+    <Content Include="vendor\font-awesome\less\variables.less" />
+    <Content Include="vendor\font-awesome\scss\font-awesome.scss" />
+    <Content Include="vendor\font-awesome\scss\_animated.scss" />
+    <Content Include="vendor\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="vendor\font-awesome\scss\_core.scss" />
+    <Content Include="vendor\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="vendor\font-awesome\scss\_icons.scss" />
+    <Content Include="vendor\font-awesome\scss\_larger.scss" />
+    <Content Include="vendor\font-awesome\scss\_list.scss" />
+    <Content Include="vendor\font-awesome\scss\_mixins.scss" />
+    <Content Include="vendor\font-awesome\scss\_path.scss" />
+    <Content Include="vendor\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="vendor\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="vendor\font-awesome\scss\_stacked.scss" />
+    <Content Include="vendor\font-awesome\scss\_variables.scss" />
+    <Content Include="Views\Masterpage.cshtml" />
+    <Content Include="Views\Content.cshtml" />
+    <Content Include="Views\Home.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
+    <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
+    <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
+    <Content Include="config\grid.editors.config.js" />
+    <Content Include="config\Lang\cs-CZ.user.xml" />
+    <Content Include="config\Lang\da-DK.user.xml" />
+    <Content Include="config\Lang\de-DE.user.xml" />
+    <Content Include="config\Lang\en-GB.user.xml" />
+    <Content Include="config\Lang\en-US.user.xml" />
+    <Content Include="config\Lang\es-ES.user.xml" />
+    <Content Include="config\Lang\fr-FR.user.xml" />
+    <Content Include="config\Lang\he-IL.user.xml" />
+    <Content Include="config\Lang\it-IT.user.xml" />
+    <Content Include="config\Lang\ja-JP.user.xml" />
+    <Content Include="config\Lang\ko-KR.user.xml" />
+    <Content Include="config\Lang\nb-NO.user.xml" />
+    <Content Include="config\Lang\nl-NL.user.xml" />
+    <Content Include="config\Lang\pl-PL.user.xml" />
+    <Content Include="config\Lang\pt-BR.user.xml" />
+    <Content Include="config\Lang\ru-RU.user.xml" />
+    <Content Include="config\Lang\sv-SE.user.xml" />
+    <Content Include="config\Lang\zh-CN.user.xml" />
+    <Content Include="default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomUmbracoApplication.cs" />
+    <Compile Include="E.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6161</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:6161/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\UmbracoCms.7.7.3\build\UmbracoCms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.7.7.3\build\UmbracoCms.props'))" />
+    <Error Condition="!Exists('..\packages\UmbracoCms.7.7.3\build\UmbracoCms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\UmbracoCms.7.7.3\build\UmbracoCms.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <Import Project="..\packages\UmbracoCms.7.7.3\build\UmbracoCms.targets" Condition="Exists('..\packages\UmbracoCms.7.7.3\build\UmbracoCms.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

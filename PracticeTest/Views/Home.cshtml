@@ -1,0 +1,23 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "Masterpage.cshtml";
+}
+
+@* the fun starts here *@
+
+
+<section class="bg-primary" id="about">
+@CurrentPage.About
+</section>
+
+<section id="services">
+@CurrentPage.Service
+</section>
+
+<section class="p-0" id="portfolio">
+    @CurrentPage.Portfolio
+</section>
+
+<section id="contact">
+    @CurrentPage.Contact
+</section>
